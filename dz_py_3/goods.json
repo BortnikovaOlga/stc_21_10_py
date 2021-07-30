@@ -1,36 +1,36 @@
 [
   {
     "id": 124,
-    "name": "Телевизор",
+    "name": "РўРµР»РµРІРёР·РѕСЂ",
     "package_params": {
       "width": 5,
       "height": 11
     },
     "location_and_quantity": [
       {
-        "location": "Магазин на Ленина",
+        "location": "РњР°РіР°Р·РёРЅ РЅР° Р›РµРЅРёРЅР°",
         "amount": 7
       },
       {
-        "location": "Магазин в центре",
+        "location": "РњР°РіР°Р·РёРЅ РІ С†РµРЅС‚СЂРµ",
         "amount": 3
       }
     ]
   },
   {
     "id": 126,
-    "name": "Телевизор2",
+    "name": "РўРµР»РµРІРёР·РѕСЂ2",
     "package_params": {
       "width": 5,
       "height": 10
     },
     "location_and_quantity": [
       {
-        "location": "Магазин на Ленина 1",
+        "location": "РњР°РіР°Р·РёРЅ РЅР° Р›РµРЅРёРЅР° 1",
         "amount": 7
       },
       {
-        "location": "Магазин в центре 2",
+        "location": "РњР°РіР°Р·РёРЅ РІ С†РµРЅС‚СЂРµ 2",
         "amount": 3
       }
     ]
