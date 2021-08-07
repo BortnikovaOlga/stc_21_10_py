@@ -3,7 +3,6 @@ from schematics.types import StringType, DecimalType
 from schematics.exceptions import ValidationError, DataError
 from enum import Enum
 from schematics.validate import validate
-from main import valid_all_decorator
 
 
 class TimeDay(Enum):
@@ -43,18 +42,12 @@ def json_input_validation(*args, **kwargs) -> bool:
     return True
 
 
-def json_result_validation(result: dict) -> bool:
+def json_result_validation(result: dict, expected_result: str) -> bool:
     """Проверка возвращаемого результата для json_function."""
-    return result["city"] == "Innopolis"
+    return result["city"] == expected_result
 
 
 def json_default_behavior():
     """Значение по умолчанию."""
-    return "Kazan"
 
-
-@valid_all_decorator(json_input_validation, json_result_validation)
-def json_function(*args, **kwargs):
-    """Функция для проверки декоратора."""
-    print(kwargs["weather_dict"])
-    return kwargs["weather_dict"]
+    return {"city": "Kazan", "temperature":19, "taken_at" : "day"}

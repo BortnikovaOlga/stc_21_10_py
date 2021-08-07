@@ -31,8 +31,12 @@ class FailRepeatTymeIsZerro(Exception):
 
 
 def valid_all_decorator(
-        input_validation: Callable, result_validation: Callable,
-        default_behavior: Callable = None, on_fail_repeat_time: int = 1, ) -> Callable:
+        input_validation: Callable,
+        result_validation: Callable,
+        expected_result: Any,
+        default_behavior: Callable = None,
+        on_fail_repeat_time: int = 1,
+) -> Callable:
     """Декоратор для валидации входных , результирующих значений."""
 
     def decoration(func: Callable) -> Callable:
@@ -44,8 +48,7 @@ def valid_all_decorator(
                 raise FailRepeatTymeIsZerro
             for i in range(on_fail_repeat_time):
                 result = func(*args, **kwargs)
-                print(i)
-                if result_validation(result):
+                if result_validation(result, expected_result):
                     return result
 
             if default_behavior:
