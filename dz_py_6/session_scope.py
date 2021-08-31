@@ -7,12 +7,12 @@ Session = scoped_session(sessionmaker(autoflush=True, autocommit=False, bind=eng
 
 @contextmanager
 def session_scope():
+    """Открывает и закрывает сессию."""
     session = Session()
     try:
         yield session
-        session.commit()
-    except:
+    except Exception as ex:
         session.rollback()
-        raise
+        raise ex
     finally:
         session.close()
